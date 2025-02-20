@@ -7,7 +7,7 @@ function Movie({ id, coverImg, title, overview, genre_ids }) {
   <h2>
     <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>{title}</Link>
   </h2>
-  <p>{overview}</p>
+  <p>{overview.length > 235 ? `${overview.slice(0, 235)}...` : overview}</p>
   <ul>
       {genre_ids.map((g) => 
       <li key={g}>Genre_id: {g}</li>)}
